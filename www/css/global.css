@@ -26,8 +26,63 @@ section {
     overflow: hidden;
 }
 
-#double-border:hover .bg:not(:hover) {
+#double-border:hover>div:not(:hover) {
     -webkit-filter: saturate(0.3) contrast(130%) brightness(120%);
+}
+
+#double-border>div {
+    float: left;
+    width: calc(100% / 3);
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: all 400ms ease-in 0;
+    cursor: pointer;
+}
+
+#double-border>div:hover {
+    -webkit-filter: saturate(1.1) brightness(1.1);
+}
+
+#double-border h2 {
+    position: absolute;
+    font-family: 'diner-skinnyregular';
+    font-size: 2em;
+    letter-spacing: 0.2em;
+    margin: 0;
+    text-align: center;
+}
+
+#conseil-image {
+    background-image: url(../img/bg-1.jpg);
+}
+
+#conseil-image h2 {
+    bottom: 80%;
+    width: 24%;
+    color: #C9E0DD;
+}
+
+#personal-shopper {
+    background-image: url(../img/bg-2.jpg);
+}
+
+#personal-shopper h2 {
+    bottom: 12%;
+    width: 33%;
+    color: #002F2C;
+}
+
+#conseil-cadeau {
+    background-image: url(../img/bg-3.jpg);
+}
+
+#conseil-cadeau h2{
+    bottom: 27%;
+    right: 0;
+    width: 20%;
+    color: #8B9F86;
 }
 
 #frame {
@@ -36,20 +91,6 @@ section {
     bottom: 0;
     
     pointer-events: none;
-}
-
-.frame-element {
-    height: 50px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-#frame-top {
-    background-image: url(../img/frame-top.png);
-}
-
-#frame-bottom {
-    background-image: url(../img/frame-bottom.png);
 }
 
 #frame h1 {
@@ -65,59 +106,18 @@ section {
 	letter-spacing: 0.2em;
 }
 
-.bg {
-    float: left;
-    width: calc(100% / 3);
-    height: 100%;
-    background-size: 100% 100%;
+#frame>div {
+    height: 50px;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
-    transition: all 400ms ease-in 0;
-    cursor: pointer;
+    background-size: 100% 100%;
 }
 
-.bg:hover {
-    -webkit-filter: saturate(1.1) brightness(1.1);
+#frame-top {
+    background-image: url(../img/frame-top.png);
 }
 
-.bg h2 {
-    position: absolute;
-    font-family: 'diner-skinnyregular';
-    font-size: 2em;
-    letter-spacing: 0.2em;
-    margin: 0;
-    text-align: center;
-}
-
-#conseil-image {
-    bottom: 80%;
-    width: 24%;
-    color: #C9E0DD;
-}
-
-#personal-shopper {
-    bottom: 12%;
-    width: 33%;
-    color: #002F2C;
-}
-
-#conseil-cadeau {
-    bottom: 27%;
-    right: 0;
-    width: 20%;
-    color: #8B9F86;
-}
-
-#bg-1 {
-    background-image: url(../img/bg-1.jpg);
-}
-
-#bg-2 {
-    background-image: url(../img/bg-2.jpg);
-}
-
-#bg-3 {
-    background-image: url(../img/bg-3.jpg);
+#frame-bottom {
+    background-image: url(../img/frame-bottom.png);
 }
 
 @font-face {
@@ -127,30 +127,6 @@ section {
          url('fonts/Diner-Skinny-webfont.woff') format('woff'),
          url('fonts/Diner-Skinny-webfont.ttf') format('truetype'),
          url('fonts/Diner-Skinny-webfont.svg#diner-skinnyregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'diner-fattregular';
-    src: url('fonts/Diner-Fatt-webfont.eot');
-    src: url('fonts/Diner-Fatt-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Diner-Fatt-webfont.woff') format('woff'),
-         url('fonts/Diner-Fatt-webfont.ttf') format('truetype'),
-         url('fonts/Diner-Fatt-webfont.svg#diner-fattregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'diner-obeseregular';
-    src: url('fonts/Diner-Obese-webfont.eot');
-    src: url('fonts/Diner-Obese-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Diner-Obese-webfont.woff') format('woff'),
-         url('fonts/Diner-Obese-webfont.ttf') format('truetype'),
-         url('fonts/Diner-Obese-webfont.svg#diner-obeseregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
