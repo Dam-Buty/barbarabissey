@@ -23,41 +23,15 @@ section {
     margin: auto;
 }
 
-@media screen and (max-aspect-ratio: 3/2) { 
-
-    section {
-        width: calc(99vw - 20px);
-        height: 66vw;    
-    }
-
-}
-
-@media screen and (min-aspect-ratio: 3/2) { 
-
-    section {
-        height: calc(99vh - 20px);  
-        width: 150vh;          
-    }
-
-    #double-border h2 {
-        font-size: 1.5em !important;
-    }
-
-}
+/*************************************
+*   CONTAINER
+*************************************/
 
 #double-border {
     position: relative;
     height: 100%;
     border: 4px solid black;
     overflow: hidden;
-}
-
-#double-border:hover>div:not(:hover) {
-    -webkit-filter: saturate(0.3) contrast(130%) brightness(120%);
-}
-
-#double-border:hover>div:not(:hover) h2 {
-    -webkit-animation: none;
 }
 
 #double-border>div {
@@ -67,38 +41,37 @@ section {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    cursor: pointer;
 }
 
-#double-border>div:hover {
-    -webkit-filter: saturate(1.1) brightness(1.1);
-}
-
-#double-border h2 {
+#double-border>div h2 {
     position: absolute;
     font-family: 'diner-skinnyregular';
     font-size: 2em;
     letter-spacing: 0.2em;
     margin: 0;
     text-align: center;
+    cursor: pointer;
+    
+    -webkit-animation: pulse 4s linear 6s infinite;
 }
 
-#double-border>div:hover h2 {
-/*    top: 50%;*/
+#double-border>div h2:hover {
     -webkit-animation: pulse2 1.8s linear 0 infinite;
 }
+
+/*************************************
+*   NAV LABELS
+*************************************/
 
 #conseil-image {
     background-image: url(../img/bg-1.jpg);
 }
 
 #conseil-image h2 {
-left: 0;
+    left: 0;
     top: 10%;
     width: 24%;
     color: #C9E0DD;
-    
-    -webkit-animation: pulse 4s linear 0 infinite;
 }
 
 #personal-shopper {
@@ -110,7 +83,7 @@ left: 0;
     width: 33%;
     color: #002F2C;
     
-    -webkit-animation: pulse 4s linear 7s infinite;
+    -webkit-animation-delay: 6.5s;
 }
 
 #conseil-cadeau {
@@ -124,10 +97,14 @@ left: 0;
     color: #8B9F86;
     writing-mode: tb-rl;
     
-    -webkit-animation: pulse 4s linear 3s infinite;
+    -webkit-animation-delay: 7s;
 }
 
-#modal {
+/*************************************
+*   MODAL WINDOW
+*************************************/
+
+.modal {
     position: absolute;
     top: 10%;
     left: 50%;
@@ -137,66 +114,157 @@ left: 0;
     
     padding: 30px;
     
-    color: white;
+    color: #D0B899;
     
     text-align: center;
 	font-family: monospace;
 	
 	opacity: 0;
+	z-index: 10;
 }
 
-#modal h2 {
+.close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    width: 2em;
+    margin: 30px;
+}
+
+.close-button:hover {
+    -webkit-animation: roll 2s linear 0 infinite;
+}
+
+#arrow-modal {
+    margin-top: 1em;
+}
+
+.modal h2 {
 	font-family: 'diner-skinnyregular';
 	font-size: 3em;
 	margin: 0;
 	
 	letter-spacing: 0.2em;
+	
+	color: #9D360A;
 }
 
-#modal p {
+.modal p {
     text-align: justify;
     font-size: 1.3em;
 }
 
-#frame {
+/*************************************
+*   FRAME BARBARA BISSEY
+*************************************/
+
+.frame {
     position: absolute;
     right: 0;
     bottom: 0;
+    opacity: 1;
     
-    pointer-events: none;
-    margin: 21px;
-}
-
-#frame h1 {
-	font-size: 3em;
-	
-	text-align: center;
-	margin: 0;
+    margin: 15px;
+    
+    text-align: center;
 	
 	font-family: 'diner-skinnyregular';
-	padding-top: 6px;
-	padding-bottom: 3px;
-	color: #9D360A;
-	letter-spacing: 0.2em;
 }
 
-#frame>div {
+section>.frame {
+    -webkit-animation: intro-frame 10s linear 0s;
+}
+
+.frame h1 {
+	text-align: center;
+	margin: 0;
+	padding-top: 6px;
+	padding-bottom: 3px;
+	font-size: 3em;
+	color: #9D360A;
+	letter-spacing: 0.2em;	
+}
+
+.frame>div {
+    
+    background-repeat: no-repeat; 
+}
+
+section>.frame>div {
     height: 50px;
-    background-repeat: no-repeat;
+    
     background-size: 100% 100%;
 }
 
-#frame-top {
+.frame-top {
     background-image: url(../img/frame-top.png);
 }
 
-#frame-bottom {
+.frame-bottom {
     background-image: url(../img/frame-bottom.png);
 }
 
-.blur {
-    -webkit-filter: blur(7px) brightness(0.7);
+#rideau {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    background-color: #1D1313;
+    opacity: 0;
+    
+    -webkit-animation: intro-rideau 5s linear 0s;
 }
+
+#rideau .frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+#rideau .frame>div {
+    height: 70px;
+    background-size: 50% 100%;
+    background-position: 50%;   
+}
+
+#rideau .frame h1 {	
+    font-size: 4em;
+	-webkit-animation: intro-nom 2s linear 0s;
+}
+
+#rideau .frame h2 {	
+    font-family: 'diner-skinnyregular';
+	font-size: 2em;
+	color: #9D360A;
+	letter-spacing: 0.2em;
+	
+    -webkit-animation: intro-label 2s linear 0s;
+}
+
+/*************************************
+*   ETATS
+*************************************/
+
+.blur {
+    -webkit-filter: blur(7px) brightness(0.65);
+}
+
+.desature {
+    -webkit-filter: saturate(0.3) contrast(130%) brightness(120%);
+}
+
+.inactive {
+    -webkit-animation: none !important;
+    pointer-events: none;
+}
+
+/*************************************
+*   FONTS
+*************************************/
 
 @font-face {
     font-family: 'diner-skinnyregular';
@@ -210,17 +278,139 @@ left: 0;
 
 }
 
+@font-face {
+    font-family: 'rieslingregular';
+    src: url('fonts/riesling-webfont.eot');
+    src: url('fonts/riesling-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/riesling-webfont.woff') format('woff'),
+         url('fonts/riesling-webfont.ttf') format('truetype'),
+         url('fonts/riesling-webfont.svg#rieslingregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'blackjackregular';
+    src: url('fonts/black_jack-webfont.eot');
+    src: url('fonts/black_jack-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/black_jack-webfont.woff') format('woff'),
+         url('fonts/black_jack-webfont.ttf') format('truetype'),
+         url('fonts/black_jack-webfont.svg#blackjackregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*************************************
+*   INTRO
+*************************************/
+
+@-webkit-keyframes intro-rideau {
+
+    0% {
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+	    background-color: #CFB798;
+	    opacity: 1;
+    }
+    
+    40% {
+        background-color: #1D1313;
+        opacity: 1;
+    }
+    
+    70% {
+        opacity: 1;
+    }
+    
+    99% {
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    
+}
+
+@-webkit-keyframes intro-nom {
+
+    0% {
+	    color: #1D1313;
+        font-size: 5em;
+        letter-spacing: 0.5em;
+    }
+
+    50% {
+        color: #CFB798;
+    }
+    
+    70% {
+        font-size: 2.3em;
+    }
+}
+
+@-webkit-keyframes intro-label {
+
+    0% {
+	    opacity: 0;
+    }
+
+    80% {
+	    opacity: 0;
+    }
+    
+}
+
+@-webkit-keyframes intro-frame {
+
+    0% {
+	    opacity: 0;
+    }
+
+    55% {
+	    opacity: 0;
+    }
+    
+    65% {
+        opacity: 1;
+    }
+    
+}
+
+/*************************************
+*   ANIMATIONS
+*************************************/
+
+@-webkit-keyframes roll {
+  
+  25% {
+    transform: rotate(27deg);
+  }
+
+  75% {
+    transform: rotate(-37deg);
+  }
+}
+
 @-webkit-keyframes pulse {
   0% {
     transform: scale3d(1, 1, 1);
   }
-
+  
+  12% {
+    transform: translate(-3px, 4px);
+  }
+  
   25% {
     transform: scale3d(1.05, 1.05, 1.05);
   }
 
   50% {
     transform: scale3d(1, 1, 1);
+    transform: translate(4px, -3px);
   }
 }
 
@@ -244,5 +434,31 @@ left: 0;
   50% {
     transform: scale3d(1, 1, 1);
   }
+}
+
+/*************************************
+*   MEDIA QUERIES
+*************************************/
+
+@media screen and (max-aspect-ratio: 3/2) { 
+
+    section {
+        width: calc(99vw - 20px);
+        height: 66vw;    
+    }
+
+}
+
+@media screen and (min-aspect-ratio: 3/2) { 
+
+    section {
+        height: calc(99vh - 20px);  
+        width: 150vh;          
+    }
+
+    #double-border h2 {
+        font-size: 1.5em !important;
+    }
+
 }
 
