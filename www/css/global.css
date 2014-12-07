@@ -32,18 +32,14 @@ section {
     height: 100%;
     border: 4px solid black;
     overflow: hidden;
-}
-
-#double-border>div {
-    float: left;
-    width: calc(100% / 3);
-    height: 100%;
+    
+    background-image: url(../img/bg.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 0 0;
 }
 
-#double-border>div h2 {
+#double-border>h2 {
     position: absolute;
     font-family: 'diner-skinnyregular';
     font-size: 2em;
@@ -51,12 +47,13 @@ section {
     margin: 0;
     text-align: center;
     cursor: pointer;
-    
-    -webkit-animation: pulse 4s linear 6s infinite;
 }
 
-#double-border>div h2:hover {
-    -webkit-animation: pulse2 1.8s linear 0 infinite;
+#double-border>h2:hover {
+    -webkit-animation: pulse2 1.8s linear 0 infinite !important;
+    -moz-animation: pulse2 1.8s linear 0 infinite !important;
+    -o-animation: pulse2 1.8s linear 0 infinite !important;
+    animation: pulse2 1.8s linear 0 infinite !important;
 }
 
 /*************************************
@@ -64,40 +61,40 @@ section {
 *************************************/
 
 #conseil-image {
-    background-image: url(../img/bg-1.jpg);
-}
-
-#conseil-image h2 {
     left: 0;
     top: 10%;
     width: 24%;
     color: #C9E0DD;
+    
+    -webkit-animation: pulse 4s linear 6s infinite;
+    -moz-animation: pulse 4s linear 6s infinite;
+    -o-animation: pulse 4s linear 6s infinite;
+    animation: pulse 4s linear 6s infinite;
 }
 
 #personal-shopper {
-    background-image: url(../img/bg-2.jpg);
-}
-
-#personal-shopper h2 {
     top: 90%;
+    left: 33%;
     width: 33%;
     color: #002F2C;
     
-    -webkit-animation-delay: 6.5s;
+    -webkit-animation: pulse 4s linear 6.5s infinite;
+    -moz-animation: pulse 4s linear 6.5s infinite;
+    -o-animation: pulse 4s linear 6.5s infinite;
+    animation: pulse 4s linear 6.5s infinite;
 }
 
 #conseil-cadeau {
-    background-image: url(../img/bg-3.jpg);
-}
-
-#conseil-cadeau h2{
     top: 15%;
     right: 0;
     width: 20%;
     color: #8B9F86;
     writing-mode: tb-rl;
     
-    -webkit-animation-delay: 7s;
+    -webkit-animation: pulse 4s linear 7s infinite;
+    -moz-animation: pulse 4s linear 7s infinite;
+    -o-animation: pulse 4s linear 7s infinite;
+    animation: pulse 4s linear 7s infinite;
 }
 
 /*************************************
@@ -134,6 +131,9 @@ section {
 
 .close-button:hover {
     -webkit-animation: roll 2s linear 0 infinite;
+    -moz-animation: roll 2s linear 0 infinite;
+    -o-animation: roll 2s linear 0 infinite;
+    animation: roll 2s linear 0 infinite;
 }
 
 #arrow-modal {
@@ -174,6 +174,9 @@ section {
 
 section>.frame {
     -webkit-animation: intro-frame 10s linear 0s;
+    -moz-animation: intro-frame 10s linear 0s;
+    -o-animation: intro-frame 10s linear 0s;
+    animation: intro-frame 10s linear 0s;
 }
 
 .frame h1 {
@@ -215,6 +218,9 @@ section>.frame>div {
     opacity: 0;
     
     -webkit-animation: intro-rideau 5s linear 0s;
+    -moz-animation: intro-rideau 5s linear 0s;
+    -o-animation: intro-rideau 5s linear 0s;
+    animation: intro-rideau 5s linear 0s;
 }
 
 #rideau .frame {
@@ -234,6 +240,9 @@ section>.frame>div {
 #rideau .frame h1 {	
     font-size: 4em;
 	-webkit-animation: intro-nom 2s linear 0s;
+	-moz-animation: intro-nom 2s linear 0s;
+	-o-animation: intro-nom 2s linear 0s;
+	animation: intro-nom 2s linear 0s;
 }
 
 #rideau .frame h2 {	
@@ -243,6 +252,9 @@ section>.frame>div {
 	letter-spacing: 0.2em;
 	
     -webkit-animation: intro-label 2s linear 0s;
+    -moz-animation: intro-label 2s linear 0s;
+    -o-animation: intro-label 2s linear 0s;
+    animation: intro-label 2s linear 0s;
 }
 
 /*************************************
@@ -251,15 +263,42 @@ section>.frame>div {
 
 .blur {
     -webkit-filter: blur(7px) brightness(0.65);
+    filter: blur(7px) brightness(0.65);
 }
 
 .desature {
     -webkit-filter: saturate(0.3) contrast(130%) brightness(120%);
+    filter: saturate(0.3) contrast(130%) brightness(120%);
 }
 
 .inactive {
     -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    animation: none !important;
+    
     pointer-events: none;
+}
+
+#conseil-image.instant {
+    -webkit-animation-delay: 0s !important;
+    -moz-animation-delay: 0s !important;
+    -o-animation-delay: 0s !important;
+    animation-delay: 0s !important;
+}
+
+#personal-shopper.instant {
+    -webkit-animation-delay: 0.5s !important;
+    -moz-animation-delay: 0.5s !important;
+    -o-animation-delay: 0.5s !important;
+    animation-delay: 0.5s !important;
+}
+
+#conseil-cadeau.instant {
+    -webkit-animation-delay: 1s !important;
+    -moz-animation-delay: 1s !important;
+    -o-animation-delay: 1s !important;
+    animation-delay: 1s !important;
 }
 
 /*************************************
@@ -276,164 +315,6 @@ section>.frame>div {
     font-weight: normal;
     font-style: normal;
 
-}
-
-@font-face {
-    font-family: 'rieslingregular';
-    src: url('fonts/riesling-webfont.eot');
-    src: url('fonts/riesling-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/riesling-webfont.woff') format('woff'),
-         url('fonts/riesling-webfont.ttf') format('truetype'),
-         url('fonts/riesling-webfont.svg#rieslingregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'blackjackregular';
-    src: url('fonts/black_jack-webfont.eot');
-    src: url('fonts/black_jack-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/black_jack-webfont.woff') format('woff'),
-         url('fonts/black_jack-webfont.ttf') format('truetype'),
-         url('fonts/black_jack-webfont.svg#blackjackregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-/*************************************
-*   INTRO
-*************************************/
-
-@-webkit-keyframes intro-rideau {
-
-    0% {
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-	    background-color: #CFB798;
-	    opacity: 1;
-    }
-    
-    40% {
-        background-color: #1D1313;
-        opacity: 1;
-    }
-    
-    70% {
-        opacity: 1;
-    }
-    
-    99% {
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    
-}
-
-@-webkit-keyframes intro-nom {
-
-    0% {
-	    color: #1D1313;
-        font-size: 5em;
-        letter-spacing: 0.5em;
-    }
-
-    50% {
-        color: #CFB798;
-    }
-    
-    70% {
-        font-size: 2.3em;
-    }
-}
-
-@-webkit-keyframes intro-label {
-
-    0% {
-	    opacity: 0;
-    }
-
-    80% {
-	    opacity: 0;
-    }
-    
-}
-
-@-webkit-keyframes intro-frame {
-
-    0% {
-	    opacity: 0;
-    }
-
-    55% {
-	    opacity: 0;
-    }
-    
-    65% {
-        opacity: 1;
-    }
-    
-}
-
-/*************************************
-*   ANIMATIONS
-*************************************/
-
-@-webkit-keyframes roll {
-  
-  25% {
-    transform: rotate(27deg);
-  }
-
-  75% {
-    transform: rotate(-37deg);
-  }
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    transform: scale3d(1, 1, 1);
-  }
-  
-  12% {
-    transform: translate(-3px, 4px);
-  }
-  
-  25% {
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  50% {
-    transform: scale3d(1, 1, 1);
-    transform: translate(4px, -3px);
-  }
-}
-
-@-webkit-keyframes pulse2 {
-  0% {
-    transform: scale3d(1, 1, 1);
-  }
-
-  20% {
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  25% {
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  30% {
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  50% {
-    transform: scale3d(1, 1, 1);
-  }
 }
 
 /*************************************
@@ -456,7 +337,7 @@ section>.frame>div {
         width: 150vh;          
     }
 
-    #double-border h2 {
+    #double-border>h2 {
         font-size: 1.5em !important;
     }
 
