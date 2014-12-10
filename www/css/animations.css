@@ -31,6 +31,7 @@
 
 @-moz-keyframes intro-rideau {
     0% {
+        transform: rotate(0.02deg);
         top:0;
         bottom: 0;
         left: 0;
@@ -40,13 +41,15 @@
     }
     
     40% {
+        transform: rotate(0.02deg);
         background-color: #1D1313;
         opacity: 1;
     }
     
-    70% { opacity: 1; }
+    70% { transform: rotate(0.02deg); opacity: 1; }
     
     99% {
+        transform: rotate(0.02deg);
         top:0;
         bottom: 0;
         left: 0;
@@ -126,16 +129,19 @@
 @-moz-keyframes intro-nom {
 
     0% {
+        transform: rotate(0.02deg);
 	    color: #1D1313;
         font-size: 5em;
         letter-spacing: 0.5em;
     }
 
     50% {
+        transform: rotate(0.02deg);
         color: #CFB798;
     }
     
     70% {
+        transform: rotate(0.02deg);
         font-size: 2.3em;
     }
 }
@@ -191,10 +197,12 @@
 @-moz-keyframes intro-label {
 
     0% {
+        transform: rotate(0.02deg);
 	    opacity: 0;
     }
 
     80% {
+        transform: rotate(0.02deg);
 	    opacity: 0;
     }
     
@@ -245,14 +253,17 @@
 @-moz-keyframes intro-frame {
 
     0% {
+        transform: rotate(0.02deg);
 	    opacity: 0;
     }
 
     55% {
+        transform: rotate(0.02deg);
 	    opacity: 0;
     }
     
     65% {
+        transform: rotate(0.02deg);
         opacity: 1;
     }
     

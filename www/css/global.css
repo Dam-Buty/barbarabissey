@@ -223,6 +223,14 @@ section>.frame>div {
     animation: intro-rideau 5s linear 0s;
 }
 
+#rideau .frame-top {
+    background-image: url(../img/frame-top-2.png);
+}
+
+#rideau .frame-bottom {
+    background-image: url(../img/frame-bottom-2.png);
+}
+
 #rideau .frame {
     position: absolute;
     top: 50%;
@@ -263,12 +271,12 @@ section>.frame>div {
 
 .blur {
     -webkit-filter: blur(7px) brightness(0.65);
-    filter: blur(7px) brightness(0.65);
+    filter: url(filters.svg#blur);
 }
 
 .desature {
     -webkit-filter: saturate(0.3) contrast(130%) brightness(120%);
-    filter: saturate(0.3) contrast(130%) brightness(120%);
+    filter: url(filters.svg#desature);
 }
 
 .inactive {
