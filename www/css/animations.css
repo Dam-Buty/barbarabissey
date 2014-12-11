@@ -29,6 +29,10 @@
     }
 }
 
+/*
+    The transform rotate on -moz- keyframes supposedly activates GPU rendering 
+*/
+
 @-moz-keyframes intro-rideau {
     0% {
         transform: rotate(0.02deg);

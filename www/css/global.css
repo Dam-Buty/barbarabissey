@@ -39,7 +39,7 @@ section {
     background-position: 0 0;
 }
 
-#double-border>h2 {
+#double-border > h2 {
     position: absolute;
     font-family: 'diner-skinnyregular';
     font-size: 2em;
@@ -49,7 +49,7 @@ section {
     cursor: pointer;
 }
 
-#double-border>h2:hover {
+#double-border > h2:hover {
     -webkit-animation: pulse2 1.8s linear 0 infinite !important;
     -moz-animation: pulse2 1.8s linear 0 infinite !important;
     -o-animation: pulse2 1.8s linear 0 infinite !important;
@@ -60,7 +60,7 @@ section {
 *   NAV LABELS
 *************************************/
 
-#conseil-image {
+#personal-shopper {
     left: 0;
     top: 10%;
     width: 24%;
@@ -72,7 +72,7 @@ section {
     animation: pulse 4s linear 6s infinite;
 }
 
-#personal-shopper {
+#conseil-cadeau {
     top: 90%;
     left: 33%;
     width: 33%;
@@ -84,7 +84,7 @@ section {
     animation: pulse 4s linear 6.5s infinite;
 }
 
-#conseil-cadeau {
+#conseil-image {
     top: 15%;
     right: 0;
     width: 20%;
@@ -111,7 +111,8 @@ section {
     
     padding: 30px;
     
-    color: #D0B899;
+/*    color: #D0B899;*/
+    color: #F1EDDF; 
     
     text-align: center;
 	font-family: monospace;
@@ -153,6 +154,13 @@ section {
 .modal p {
     text-align: justify;
     font-size: 1.3em;
+    background-color: rgba(10, 23, 27, 0.32);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.modal .tarif {
+    text-align: center;
 }
 
 /*************************************
@@ -172,11 +180,17 @@ section {
 	font-family: 'diner-skinnyregular';
 }
 
-section>.frame {
+section > .frame {
     -webkit-animation: intro-frame 10s linear 0s;
     -moz-animation: intro-frame 10s linear 0s;
     -o-animation: intro-frame 10s linear 0s;
     animation: intro-frame 10s linear 0s;
+	
+	cursor: pointer;
+}
+
+section > .frame:hover {
+    transform: scale3D(1.05,1.05,1.05);
 }
 
 .frame h1 {
@@ -189,12 +203,12 @@ section>.frame {
 	letter-spacing: 0.2em;	
 }
 
-.frame>div {
+.frame > div {
     
     background-repeat: no-repeat; 
 }
 
-section>.frame>div {
+section > .frame > div {
     height: 50px;
     
     background-size: 100% 100%;
@@ -239,7 +253,7 @@ section>.frame>div {
     transform: translate(-50%, -50%);
 }
 
-#rideau .frame>div {
+#rideau .frame > div {
     height: 70px;
     background-size: 50% 100%;
     background-position: 50%;   
@@ -270,7 +284,7 @@ section>.frame>div {
 *************************************/
 
 .blur {
-    -webkit-filter: blur(7px) brightness(0.65);
+    -webkit-filter: blur(7px) brightness(0.55);
     filter: url(filters.svg#blur);
 }
 
@@ -310,6 +324,112 @@ section>.frame>div {
 }
 
 /*************************************
+*   FORMS
+*************************************/
+
+.contact {
+    padding: 10px;
+    border-radius: 5px;
+    
+    background-image: url(../img/paper.png);
+    color: #9D360A;
+	font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+    
+    cursor: pointer;
+}
+
+.contact:hover {
+    color: #0D232C;
+    transform: scale3D(0.95, 0.95, 0.95);
+}
+
+hr {
+    width: 60%;
+}
+
+#modal-contact input, select, textarea{
+    height: 2em;
+    
+    border: none;
+    margin-top: 1.5em;
+    padding: 10px;
+    border-radius: 5px;
+    
+    background-image: url(../img/paper.png);
+    color: #9D360A;
+	font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#modal-contact input {
+    float: left;
+    
+    width: 49%;    
+    margin-right: 1%;
+}
+
+#modal-contact select {
+    width: 60%;
+    height: 3em;
+}
+
+#modal-contact option {
+    font-weight: bold !important;
+    letter-spacing: 0;
+}
+
+#modal-contact textarea {
+    width: 80%;
+    height: 6em;
+}
+
+#form-mail .OK {
+    float: left;
+    
+    width: 18%;
+    height: 3em;
+    
+    margin-top: 1px;
+    margin-left: 2%;
+    padding: 10px;
+    border-radius: 5px;
+    
+    background-color: #9D360A;
+    font-weight: bold;
+    
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #A18376;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #A18376;
+    font-weight: bold;
+    letter-spacing: 2px;
+   opacity:  1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #A18376;
+    font-weight: bold;
+    letter-spacing: 2px;
+   opacity:  1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #A18376;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/*************************************
 *   FONTS
 *************************************/
 
@@ -345,7 +465,7 @@ section>.frame>div {
         width: 150vh;          
     }
 
-    #double-border>h2 {
+    #double-border > h2 {
         font-size: 1.5em !important;
     }
 
